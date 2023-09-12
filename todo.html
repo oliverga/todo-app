@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todo.css" type="text/css">
+    <link rel="icon" href="list-todo.svg" type="image/svg+xml">
+
+    <title>Todos</title>
+</head>
+<body>
+    <main>
+        <h1>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+            Your Todos
+        </h1>
+        <div class="app-container">
+            <div class="add-todo">
+                <div class="todo-inputs">
+                    <input type="text" class="todo-input" bind="todoInput" placeholder="What do you need to do?">
+                    <button class="quantity-button">
+                        Add quantity
+                    </button>
+                    <input type="number" class="quantity-input hide" bind="quantityInput" placeholder="Quantity">
+                </div>
+                <button class="add-todo-button" onclick="addTodo(todoInput.value, quantityInput.value)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                    <p>Add Todo</p>
+                </button>
+            </div>
+    
+            <div class="lists">
+                <div class="todo-list-container">
+                    <h2>
+                        Todo
+                    </h2>
+                    <ul class="todo-list">
+            
+                    </ul>                
+                </div>
+    
+                <div class="done-list-container">
+                    <div class="done-list-header">
+                        <h2>
+                            Done
+                        </h2>
+                        <button class="remove-done-button hide" onclick="removeDone()">
+                            Clear done todos
+                        </button>
+                    </div>
+    
+                    <ul class="done-list">
+        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+        <template id="todo-item-template">
+            <li>
+                <div class="todo-item">
+                    <input class="todo-checkbox" type="checkbox" data-id="">
+                    <span class="todo-task"></span>
+                    <span class="todo-quantity"></span>
+                    <svg data-id="" onClick="" class="delete-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </div>
+            </li>
+        </template>
+
+    </main>
+    <script src="todo.js"></script>
+</body>
+</html>
